@@ -1,0 +1,77 @@
+@import "../comman/main";
+
+.login{
+    @include flex(row,center,center);
+    height: 100vh;
+    .loginPage{
+        box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.1);
+        padding: 20px;
+        width: 60vw;
+        @include flex(row,space-between,center);
+        .loginLeft{
+            flex: 0.5;
+            background-color: rgba(255,255,255,1);
+            @include flex(row,center,center);
+            background-color: rgb(187, 239, 243);
+        }
+        .loginRight{
+            flex: 0.5;
+            @include flex(row,center,center);
+            .loginRightDiv{
+                width: 400px;
+            }
+            .languageSelection{
+                select{
+                    outline: none;
+                    font-size: 14px;
+                    padding: 1.5px;
+                    width: 100px;
+                }
+            }
+            h2{
+                text-align: center;
+                letter-spacing: 0.5px;
+            }
+            .inputsDiv{
+                @include flex(column,center,center);
+                input{
+                    width: 100%;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    padding-left: 5px;
+                    outline: none;
+                    font-family: 'Poppins',serif;
+                    margin-top: 15px;
+                }
+                .rememberMe{
+                    @include flex(row,space-between,center);
+                    margin-top: 15px;
+                    width: 100%;
+                    div{
+                        input {
+                            position: relative;
+                            top: -7px;
+                        }
+                        @include flex(row,center,center);
+                    }
+                    a{
+                        color: blue;
+                    }
+                }
+                button{
+                    margin-top: 30px;
+                    width: 100%;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    cursor: pointer;
+                }
+                h3{
+                    font-size: 16px;
+                    font-weight: 400;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

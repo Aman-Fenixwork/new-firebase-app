@@ -1,0 +1,44 @@
+@import "../comman/main";
+
+.navBar{
+    background-color: #000;
+    .nav{
+        @include flex(center,space-between,center);
+        color: #fff;
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        .navLeft{
+            .navLogo{
+                cursor: pointer;
+                border : 2px solid #fff;
+                padding: 5px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+        }
+        .navRight{
+            flex : 0.5;
+            .navOptions{
+                ul{
+                    list-style: none;
+                    @include flex(center,space-between,center);
+                    li{
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.active{
+    border-bottom: 1px solid #fff;
+    font-weight: 600;
+}
+
+.deActive{
+    border-bottom: none;
+    font-weight: normal;
+}

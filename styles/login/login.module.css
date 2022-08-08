@@ -1,0 +1,94 @@
+.login {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.login .loginPage {
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.login .loginPage .loginLeft {
+  flex: 0.5;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(187, 239, 243);
+}
+.login .loginPage .loginRight {
+  flex: 0.5;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.login .loginPage .loginRight .loginRightDiv {
+  width: 400px;
+}
+.login .loginPage .loginRight .languageSelection select {
+  outline: none;
+  font-size: 14px;
+  padding: 1.5px;
+  width: 100px;
+}
+.login .loginPage .loginRight h2 {
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.login .loginPage .loginRight .inputsDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login .loginPage .loginRight .inputsDiv input {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  outline: none;
+  font-family: "Poppins", serif;
+  margin-top: 15px;
+}
+.login .loginPage .loginRight .inputsDiv .rememberMe {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  width: 100%;
+}
+.login .loginPage .loginRight .inputsDiv .rememberMe div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.login .loginPage .loginRight .inputsDiv .rememberMe div input {
+  position: relative;
+  top: -7px;
+}
+.login .loginPage .loginRight .inputsDiv .rememberMe a {
+  color: blue;
+}
+.login .loginPage .loginRight .inputsDiv button {
+  margin-top: 30px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+}
+.login .loginPage .loginRight .inputsDiv h3 {
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  cursor: pointer;
+}/*# sourceMappingURL=login.module.css.map */

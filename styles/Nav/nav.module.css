@@ -1,0 +1,44 @@
+.navBar {
+  background-color: #000;
+}
+.navBar .nav {
+  display: flex;
+  flex-direction: center;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.navBar .nav .navLeft .navLogo {
+  cursor: pointer;
+  border: 2px solid #fff;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.navBar .nav .navRight {
+  flex: 0.5;
+}
+.navBar .nav .navRight .navOptions ul {
+  list-style: none;
+  display: flex;
+  flex-direction: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.navBar .nav .navRight .navOptions ul li {
+  cursor: pointer;
+}
+
+.active {
+  border-bottom: 1px solid #fff;
+  font-weight: 600;
+}
+
+.deActive {
+  border-bottom: none;
+  font-weight: normal;
+}/*# sourceMappingURL=nav.module.css.map */
