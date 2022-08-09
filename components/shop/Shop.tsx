@@ -1,10 +1,10 @@
 import React, { useState, useEffect} from 'react'
-import Styles from "../../styles/shop/shop.module.css"
+import Styles from "@styles/shop/shop.module.css"
 import { TextField, Button } from "@mui/material"
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { orderBy, query, collection, onSnapshot, addDoc , deleteDoc, doc, setDoc} from 'firebase/firestore';
-import { db } from '../../config/firebase'; 
+import { db } from '@config/firebase'; 
 import Nav from "../Nav/NavPage"
 import { useRouter } from 'next/router'
 

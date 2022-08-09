@@ -1,7 +1,7 @@
 import { signInWithPopup,GoogleAuthProvider, signInWithCustomToken } from "firebase/auth";
 import { auth } from "../firebase"
 import router from 'next/router'
-import { setUserToLocalStorage } from "../../services/common/common"
+import { setUserToLocalStorage } from "@services/common/common"
 export const provider = new GoogleAuthProvider();
 import addUserToDb from "./userDatabase/common-methods"
 

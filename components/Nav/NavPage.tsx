@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import signOutUser from '../../config/firebase/signOutUser';
-import Styles from "../../styles/Nav/nav.module.css"
+import signOutUser from '@config/firebase/signOutUser';
+import Styles from "@styles/Nav/nav.module.css"
 
 const Nav = () => {
 

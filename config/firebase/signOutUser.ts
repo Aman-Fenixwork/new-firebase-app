@@ -1,4 +1,3 @@
-import { signOut } from 'firebase/auth';
 import { auth } from "../firebase" 
 import router from 'next/router'
 

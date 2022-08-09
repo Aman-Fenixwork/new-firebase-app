@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword, signInWithCustomToken } from "firebase/auth";
 import { auth } from "../firebase"
 import router from 'next/router'
-import { setUserToLocalStorage } from "../../services/common/common"
+import { setUserToLocalStorage } from "@services/common/common"
 import addUserToDb from "./userDatabase/common-methods"
 
 export const loginWithEmailAndPassword = async (email: string, password: string) :Promise<any> => {

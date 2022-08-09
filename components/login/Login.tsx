@@ -1,12 +1,12 @@
 import { Form, Formik, Field, ErrorMessage } from 'formik'
 import React, { useState } from 'react'
 import * as yup from "yup"
-import Styles from "../../styles/login/login.module.css"
+import Styles from "@styles/login/login.module.css"
 import Image from "next/image"
-import loginImage from "../../public/assets/login.svg";
-import { logInWithPopup } from "../../config/firebase/GoogleLogin";
-import { createNewUserWithEmailAndPassword } from "../../config/firebase/createUser"
-import { loginWithEmailAndPassword } from "../../config/firebase/signInWithEmail"
+import loginImage from "@public/assets/login.svg";
+import { logInWithPopup } from "@config/firebase/GoogleLogin";
+import { createNewUserWithEmailAndPassword } from "@config/firebase/createUser"
+import { loginWithEmailAndPassword } from "@config/firebase/signInWithEmail"
 
 const Login = () => {
 
