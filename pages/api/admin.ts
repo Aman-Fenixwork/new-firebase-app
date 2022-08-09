@@ -5,7 +5,7 @@ import { getStorage } from "firebase-admin/storage";
 if (!admin.apps.length) {
     admin.initializeApp({
         credential: admin.credential.cert(JSON.parse(JSON.stringify(serviceAccount))),
-        storageBucket:"pageandpage-dev.appspot.com",
+        storageBucket:"fir-practice-257ae.appspot.com",
     });    
    
 } else {

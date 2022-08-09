@@ -3,17 +3,9 @@ import { firebaseConfig } from "./firebaseConfig"
 import {
   getAuth,
   signOut,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-  signInWithCustomToken
 } from "firebase/auth";
 import {
   getFirestore,
-  doc,
-  getDoc,
-  setDoc,
-  DocumentData,
-  DocumentReference,
   Firestore
 } from "firebase/firestore";
 

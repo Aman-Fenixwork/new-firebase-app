@@ -9,7 +9,9 @@ export const createNewUserWithEmailAndPassword = async (email: string, password:
       const user = userCredential.user;
       router.push('/shop');
       setUserToLocalStorage(user); 
-      await addUserToDb(user, user.uid);
+      await addUserToDb(user, user.uid)
+      .then(() => console.log("User added to Database"))
+      .catch((e) => console.log("Error Message :",e))
       const req = await fetch(`/api/auth`, {
         method: "POST",
         body: JSON.stringify({ uid: user.uid }),

@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
+import signOutUser from '../../config/firebase/signOutUser';
 import Styles from "../../styles/Nav/nav.module.css"
 
 const Nav = () => {
 
     const [active, setActive] = useState("Home");
-
+    const logoutUser = () => {
+        setActive("Logout");
+        signOutUser();
+    }
     return (
         <div className={Styles.navBar}>
             <div className={Styles.nav}>
@@ -20,7 +24,7 @@ const Nav = () => {
                             <li className={active == "About" ? Styles.active : Styles.deActive} onClick={() => setActive("About")}>About</li>
                             <li className={active == "Help" ? Styles.active : Styles.deActive} onClick={() => setActive("Help")}>Help</li>
                             <li className={active == "Contact" ? Styles.active : Styles.deActive} onClick={() => setActive("Contact")}>Contact</li>
-                            <li className={active == "Service" ? Styles.active : Styles.deActive} onClick={() => setActive("Service")}>Service</li>
+                            <li className={active == "Logout" ? Styles.active : Styles.deActive} onClick={logoutUser}>Logout</li>
                         </ul>
                     </div>
                 </div>
