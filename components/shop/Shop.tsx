@@ -13,18 +13,19 @@ const Shop = () => {
   const [value, setValue] = useState<string>('');
   const [data, setData] = useState<any>([]);
   const router = useRouter();
-  let user = false;
 
   useEffect(() => {
     const q = query(collection(db,"to-do"), orderBy("time","desc"));
 
     const unsubscribe = onSnapshot(q, (snapshot) => {
       setData(snapshot.docs.map(doc => ({...doc.data(), id: doc.id})));
+
     });
     return () => unsubscribe()
   },[])
 
   const handleClick = () => {
+    console.log("Docs :",data)
     addDoc(
         collection(db,"to-do"),{
           name: value,

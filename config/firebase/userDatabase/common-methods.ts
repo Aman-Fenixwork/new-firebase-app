@@ -66,7 +66,6 @@ const fetchUser = async (uid?: string): Promise<any> => {
         console.error("Error adding user to DB: ", e);
       }
     } else {
-      console.log("user already exists!!!");
       return docId;
     }
   };

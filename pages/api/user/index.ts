@@ -27,6 +27,8 @@ export default async function updateUserByUID(req: any, res: any) {
                         const ref = await db.collection('users').add({...user});
                         res.status(200).json({ message: 'Success', response: { id: ref.id }, status: 200 });
                         break;
+                    case 'delete':
+                        break;
                     default:
                         break;
                 }
