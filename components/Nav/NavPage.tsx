@@ -15,7 +15,6 @@ import { getUserSignInMethod } from "@services/common/common"
 
 const Nav = () => {
     let method = getUserSignInMethod();
-    console.log("Methods use by Google : ",method);
     const provider = new GoogleAuthProvider();
     const style = {
         position: 'absolute' as 'absolute',
