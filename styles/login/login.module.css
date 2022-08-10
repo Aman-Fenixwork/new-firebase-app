@@ -33,6 +33,10 @@
 .login .loginPage .loginRight .loginRightDiv {
   width: 400px;
 }
+.login .loginPage .loginRight .userImageDiv > img {
+  border-radius: 50%;
+  border: 2px solid red;
+}
 .login .loginPage .loginRight .languageSelection select {
   outline: none;
   font-size: 14px;
@@ -78,6 +82,17 @@
 }
 .login .loginPage .loginRight .inputsDiv .rememberMe a {
   color: blue;
+}
+.login .loginPage .loginRight .inputsDiv .errorMessageDiv {
+  width: 100%;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  letter-spacing: 0.5px;
+  font-weight: 600;
 }
 .login .loginPage .loginRight .inputsDiv button {
   margin-top: 30px;

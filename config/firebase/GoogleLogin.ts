@@ -12,8 +12,9 @@ provider.setCustomParameters({
 export const logInWithPopup = () => {
     signInWithPopup(auth, provider)
     .then(async (userCredential) => {
+        console.log("while login using google :",userCredential)
         const user = userCredential.user;
-        setUserToLocalStorage(user); 
+        setUserToLocalStorage(user,"logInWithPopup"); 
         router.push('/shop');
         await addUserToDb(user, user.uid);
         const req = await fetch(`/api/auth`, {

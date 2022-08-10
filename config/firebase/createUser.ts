@@ -8,7 +8,7 @@ export const createNewUserWithEmailAndPassword = async (email: string, password:
     return await createUserWithEmailAndPassword(auth, email, password).then(async (userCredential) => {
       const user = userCredential.user;
       router.push('/shop');
-      setUserToLocalStorage(user); 
+      setUserToLocalStorage(user,"withEmailAndPassword"); 
       await addUserToDb(user, user.uid)
       .then(() => console.log("User added to Database"))
       .catch((e) => console.log("Error Message :",e))

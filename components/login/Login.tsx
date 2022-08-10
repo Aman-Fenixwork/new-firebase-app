@@ -7,9 +7,11 @@ import loginImage from "@public/assets/login.svg";
 import { logInWithPopup } from "@config/firebase/GoogleLogin";
 import { createNewUserWithEmailAndPassword } from "@config/firebase/createUser"
 import { loginWithEmailAndPassword } from "@config/firebase/signInWithEmail"
+import Alerts from "../Alerts/Alerts"
+import { getUserFromLocalStorage } from "@services/common/common"
 
 const Login = () => {
-
+  
   const initialValues = { 
     email: "",
     password: "",
@@ -21,7 +23,6 @@ const Login = () => {
   })
 
   const [signUp, setSignUp] = useState<boolean>(false);
-
   return (
     <>  
       <div className={Styles.login}>
@@ -41,13 +42,11 @@ const Login = () => {
               {
                 signUp ? (<h2>Sign up</h2>) : (<h2>Login</h2>)
               }
-              
+             
               <div className={Styles.inputsDiv}>
                 <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={()=> console.log("Submited")}>
                 {({
                     values,
-                    errors,
-                    handleSubmit,
                 }) => (
                   <Form>
                     <Field type="email" name="email" placeholder="Email" />
@@ -62,6 +61,9 @@ const Login = () => {
                       {
                         signUp ? (<span></span>) : (<small><a href="#">Forgot password?</a></small>)
                       }
+                    </div>
+                    <div className={Styles.errorMessageDiv}>
+                      <small>Error Message</small>
                     </div>
                     {
                       signUp ? (
@@ -86,8 +88,10 @@ const Login = () => {
             </div>
             
           </div>
+          
         </div>
       </div>
+      
     </>
   )
 }

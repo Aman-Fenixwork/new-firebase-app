@@ -1,5 +1,6 @@
-export const setUserToLocalStorage = (user : any) => {
+export const setUserToLocalStorage = (user : any, signInMethod : any) => {
     localStorage.setItem('user', JSON.stringify(user));
+    localStorage.setItem('signInMethod', signInMethod);
 }
 
 export const getUserFromLocalStorage = () => {
@@ -10,4 +11,8 @@ export const getUserFromLocalStorage = () => {
     else {
         return null;
     }
+}
+
+export const getUserSignInMethod = () => {
+    return localStorage.getItem("signInMethod");
 }

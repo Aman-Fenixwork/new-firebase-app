@@ -7,9 +7,10 @@ import addUserToDb from "./userDatabase/common-methods"
 export const loginWithEmailAndPassword = async (email: string, password: string) :Promise<any> => {
     return await signInWithEmailAndPassword(auth, email, password)
     .then( async (userCredential) => {
+        console.log("response from signInWith Email :", userCredential)
         const user = userCredential.user;
         router.push('/shop');
-        setUserToLocalStorage(user);
+        setUserToLocalStorage(user,"withEmailAndPassword");
         await addUserToDb(user, user.uid);
         //sign in with token
         const req = await fetch(`/api/auth`, {
@@ -23,6 +24,6 @@ export const loginWithEmailAndPassword = async (email: string, password: string)
         }
     })
     .catch((error) => {
-        console.log("Error Message :",error)
+        console.log("Error Message while sign in email and password :",error.code)
     })
 };

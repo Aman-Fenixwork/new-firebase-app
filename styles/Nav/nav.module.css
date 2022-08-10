@@ -33,6 +33,23 @@
   cursor: pointer;
 }
 
+.loginModal div input {
+  width: 300px !important;
+}
+.loginModal span {
+  margin-top: 10px;
+}
+.loginModal .loginButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.loginModal .loginButton button {
+  margin-top: 20px;
+}
+
 .active {
   border-bottom: 1px solid #fff;
   font-weight: 600;

@@ -6,17 +6,20 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { orderBy, query, collection, onSnapshot, addDoc , deleteDoc, doc, setDoc} from 'firebase/firestore';
 import { db } from '@config/firebase'; 
 import Nav from "../Nav/NavPage"
-import { useRouter } from 'next/router'
+import Alerts from '@components/Alerts/Alerts';
 
 const Shop = () => {
-
+  const [open, setOpen] = useState(false);
+  const [itemAdded, setItemAdded] = useState(false);
+  const [itemDeleted, setItemDeleted] = useState(false);
+  const [itemUpdated, setItemUpdated] = useState(false);
   const [value, setValue] = useState<string>('');
   const [data, setData] = useState<any>([]);
-  const router = useRouter();
+
 
   useEffect(() => {
+    setOpen(true);
     const q = query(collection(db,"to-do"), orderBy("time","desc"));
-
     const unsubscribe = onSnapshot(q, (snapshot) => {
       setData(snapshot.docs.map(doc => ({...doc.data(), id: doc.id})));
 
@@ -25,26 +28,28 @@ const Shop = () => {
   },[])
 
   const handleClick = () => {
-    console.log("Docs :",data)
+    setItemAdded(true);
     addDoc(
         collection(db,"to-do"),{
           name: value,
           time : new Date()
-      }).then(() => setValue(''))
+      }).then(() => {setValue('');setTimeout(()=>setItemAdded(false), 1000);})
       .catch((e:any) => console.log("Error Message :",e))
   }
 
   const handleDelete = async (id:any) => {
-    await deleteDoc(doc(db,"to-do",id));
+    setItemDeleted(true)
+    await deleteDoc(doc(db,"to-do",id)).then(() => setTimeout(()=>setItemDeleted(false), 1000));
   }
 
   const handleUpdate = (id:any) => {
     const ref = doc(db,"to-do",id);
     let newValue = prompt("Please enter new value :");
+    setItemUpdated(true);
     setDoc(ref, {
         name : newValue,
         time : new Date()
-    })
+    }).then(() => setTimeout(()=>setItemUpdated(false), 1000)).catch((e) => console.log(e))
   }
 
   return (
@@ -75,6 +80,22 @@ const Shop = () => {
             </div>
         </div>
       </div>
+      {/* <Stack spacing={2} sx={{ width: '100%' }}>      
+        <Snackbar open={open} autoHideDuration={3000} onClose={() => setOpen(false)}>
+          <Alert onClose={() => setOpen(false)} severity="success" sx={{ width: '100%' }}>
+            Login Successful!
+          </Alert>
+        </Snackbar>
+      </Stack> */}
+      {
+        itemAdded && <Alerts severity="info" alertMessage="Item Added!" show={itemAdded} />
+      }
+      {
+        itemUpdated && <Alerts severity="warning" alertMessage="Item Updated!" show={itemUpdated} />
+      }
+      {
+        itemDeleted && <Alerts severity="warning" alertMessage="Item Deleted!" show={itemDeleted} />
+      }
     </>
   )
 }
