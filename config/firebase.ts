@@ -17,8 +17,7 @@ export default firebaseapp
 
 export const db:Firestore = getFirestore();
 
-export const appCheck = initializeAppCheck(firebaseapp, {
-  provider: new ReCaptchaV3Provider('abcdefghijklmnopqrstuvwxy-1234567890abcd'),
-
+initializeAppCheck(firebaseapp, {
+  provider: new ReCaptchaV3Provider('933AC412-A36F-4428-9CD2-7EDD757048FF'),
   isTokenAutoRefreshEnabled: true
 });

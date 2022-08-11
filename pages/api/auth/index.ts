@@ -7,12 +7,15 @@ if (!admin.apps.length) {
     admin.app()
 }
 
+const additionalClaims = {
+    premiumAccount: true,
+};
 
 function getToken(req: any, res: any) {
     if (req.method === 'POST'){
         const body = JSON.parse(req.body);
         
-        admin.auth().createCustomToken(body.uid)
+        admin.auth().createCustomToken(body.uid,additionalClaims)
         .then((token: string) => {
             res.status(200).json({ token: token })
         })  
