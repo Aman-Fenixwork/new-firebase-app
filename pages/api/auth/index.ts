@@ -7,6 +7,7 @@ if (!admin.apps.length) {
     admin.app()
 }
 
+
 function getToken(req: any, res: any) {
     if (req.method === 'POST'){
         const body = JSON.parse(req.body);
