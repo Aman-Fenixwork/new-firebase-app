@@ -7,7 +7,7 @@ import {
   getFirestore,
   Firestore
 } from "firebase/firestore";
-const { initializeAppCheck, ReCaptchaV3Provider } = require("firebase/app-check");
+import { initializeAppCheck, ReCaptchaV3Provider } from "firebase/app-check";
 
 const firebaseapp = initializeApp(firebaseConfig);
 
