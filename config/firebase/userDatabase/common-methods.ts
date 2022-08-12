@@ -40,7 +40,7 @@ const fetchUser = async (uid?: string): Promise<any> => {
       }
   };
 
-  const addUserToDb = async (user: any, uid: string): Promise<any> => {
+  const addUserToDb = async (user: any, uid: string, downloadURL : any, userName : string): Promise<any> => {
     const { isExists, docId, status } = await checkUserExistsOnDb(uid);
     if (!isExists && (status === 200 || status === 404)) {
       try {
@@ -50,9 +50,9 @@ const fetchUser = async (uid?: string): Promise<any> => {
             action: "add",
             user: {
               createdAt : user.createdAt,
-              name: user?.displayName,
+              name: user?.displayName ? user?.displayName  : userName,
               email: user?.email,
-              photoURL: user?.photoURL,
+              photoURL: user?.photoURL ? user.photoURL : downloadURL,
               user_uid: user?.uid,
             },
           }),

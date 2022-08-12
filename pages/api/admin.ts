@@ -16,4 +16,4 @@ export default admin.firestore();
 
 export const bucket = getStorage().bucket();
 
-export const storage=admin.storage();
+export const storage = admin.storage();

@@ -53,6 +53,16 @@
   justify-content: center;
   align-items: center;
 }
+.login .loginPage .loginRight .inputsDiv .userImageDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login .loginPage .loginRight .inputsDiv .userImageDiv img {
+  border: 2px solid red;
+  border-radius: 50%;
+}
 .login .loginPage .loginRight .inputsDiv input {
   width: 100%;
   padding-top: 10px;

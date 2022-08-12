@@ -40,6 +40,13 @@
             
             .inputsDiv{
                 @include flex(column,center,center);
+                .userImageDiv{
+                    @include flex(column,center,center);
+                    img{
+                        border : 2px solid red;
+                        border-radius: 50%;
+                    }
+                }
                 input{
                     width: 100%;
                     padding-top: 10px;
